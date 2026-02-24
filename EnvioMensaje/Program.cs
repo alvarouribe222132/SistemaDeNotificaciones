@@ -33,7 +33,7 @@ class Program
 		Console.WriteLine("Seleccione el Medio de Notificación:");
 		Console.WriteLine("1. Email");
 		Console.WriteLine("2. SMS");
-		Console.WriteLine("3. WhatsApp");
+		Console.WriteLine("3. WhatsApp \n");
 
 		string opcion = Console.ReadLine();
 		INotificador metodoSeleccionado;
@@ -54,9 +54,38 @@ class Program
 				return;
 		}
 
+		Console.WriteLine("Seleccione el Mensaje a Enviar: ");
+		Console.WriteLine("1. Recordatorio de CITA. ");
+		Console.WriteLine("2. Confirmacion de Pago. ");
+		Console.WriteLine("3. Alerta de Seguridad. ");
+		Console.WriteLine("4. Notificacion de Domicilio ");
+
+		string opcionMensaje = Console.ReadLine();
+		string mensaje = opcionMensaje;
+
+		switch (mensaje)
+		{
+			case "1":
+				mensaje = "Recordatorio: Tiene una cita programada para el 5 de Marzo de 2026 a las 09:30 AM.";
+				break;
+			case "2":
+				mensaje = "Su Pago ha sido Confirmado.  !!!Gracias Por su Compra!!!";
+				break;
+			case "3":
+				mensaje = "Alerta: Detectamos Actividad Inusual en su cuenta. Por favor revise y tome medidas de seguridad.";
+				break;
+			case "4":
+				mensaje = "El Envio a su Domicilio se ha realizado, Por favor estar pendiente de nuestro Proximo Contacto";
+				break;
+			default:
+				Console.WriteLine(" X Opción no válida. !!!Verifique!!!.");
+				return;
+
+		}
+
 		ProcesadorDeNotificacion procesador = new ProcesadorDeNotificacion(metodoSeleccionado);
 
-		bool resultado = procesador.EnvioDeNotificacion("Proceso de Notificación: ");
+		bool resultado = procesador.EnvioDeNotificacion(mensaje);
 
 		if (resultado)
 			Console.WriteLine("Envio Realizado Correctamente");
