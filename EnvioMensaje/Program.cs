@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using EnvioMensaje;
+using System.Threading;
 /*
  *========================================================================== 
  * Proyecto: Sistema de Notificaciónes Polimorfismo
@@ -26,7 +27,7 @@ using EnvioMensaje;
 
 class Program 
 {
-	static void Main(string[] args) 
+	static void Main(string[] args)
 	{
 		Console.WriteLine("=== BIENVENIDO AL SISTEMA DE NOTIFICACIONES ===");
 		Console.WriteLine("Proceso de Envio");
@@ -86,6 +87,15 @@ class Program
 		ProcesadorDeNotificacion procesador = new ProcesadorDeNotificacion(metodoSeleccionado);
 
 		bool resultado = procesador.EnvioDeNotificacion(mensaje);
+
+		Console.Write("\nProcesando envio: ");
+		for (int i = 0;
+			i < 5; i++)
+		{
+			Thread.Sleep(500);
+			Console.Write(".");
+		}
+		Console.WriteLine();
 
 		if (resultado)
 			Console.WriteLine("Envio Realizado Correctamente");
