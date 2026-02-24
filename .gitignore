@@ -1,0 +1,80 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Xx]64/
+[Xx]86/
+bin/
+obj/
+[Bb]uild/
+out/
+publish/
+
+# .NET
+project.lock.json
+artifacts/
+*.nupkg
+*.snupkg
+**/[Pp]ackages/
+*.nuget.props
+*.nuget.targets
+
+# NuGet
+packages/
+*.lock.json
+
+# Test results
+[Tt]est[Rr]es
+
+
+
+
+
+
+
+
+
+
+
+ult*/
+TestResult.xml
+coverage*.json
+*.coverage
+*.coveragexml
+*.trx
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Logs y bases de datos
+*.log
+*.sqlite
+*.db
+
+# Secretos
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.pfx
+*.p12
+
+# Docker
+docker-compose.override.yml
